@@ -1,251 +1,251 @@
-#tilt {
+.tilt {
     grid-area: tilt;
 }
 
-#one {
+.one {
     grid-area: one;
 }
 
-#two {
+.two {
    grid-area: two; 
 }
 
-#three {
+.three {
     grid-area: three;
 }
 
-#four {
+.four {
     grid-area: four;
 }
 
-#five {
+.five {
     grid-area: five;
 }
 
-#six {
+.six {
     grid-area: six;
 }
 
-#seven {
+.seven {
     grid-area: seven;
 }
 
-#eight {
+.eight {
     grid-area: eight;
 }
 
-#nine {
+.nine {
     grid-area: nine;
 }
 
-#zero {
+.zero {
     grid-area: zero;
 }
 
-#backspace {
+.backspace {
     grid-area: backspace;
 }
-#tab {
+.tab {
     grid-area: tab;
 }
 
-#q {
+.q {
     grid-area: q;
 }
 
-#w {
+.w {
     grid-area: w;
 }
 
-#e {
+.e {
     grid-area: e;
 }
 
-#r {
+.r {
     grid-area: r;
 }
 
-#t {
+.t {
     grid-area: t;
 }
 
-#y {
+.y {
     grid-area: y;
 }
 
-#u {
+.u {
     grid-area: u;
 }
 
-#i {
+.i {
     grid-area: i;
 }
 
-#o {
+.o {
     grid-area: o;
 }
 
-#p {
+.p {
     grid-area: p;
 }
 
-#brackL {
+.brackL {
     grid-area: brackL;
 }
 
-#brackR {
+.brackR {
     grid-area: brackR;
 }
 
-#slash {
+.slash {
     grid-area: slash;
 }
 
-#del {
+.del {
     grid-area: del;
 }
 
-#capsLook {
+.capsLook {
     grid-area: capsLook; 
 }
 
-#a {
+.a {
     grid-area: a;
 }
 
-#s {
+.s {
     grid-area: s;
 }
 
-#d {
+.d {
     grid-area: d;
 }
 
-#f {
+.f {
     grid-area: f;
 }
 
-#g {
+.g {
     grid-area: g;
 }
 
-#h {
+.h {
     grid-area: h;
 }
 
-#j {
+.j {
     grid-area: j;
 }
 
-#k {
+.k {
     grid-area: k;
 }
 
-#l {
+.l {
     grid-area: l;
 }
 
-#dashComma {
+.dashComma {
     grid-area: dashComma;
 }
 
-#upperComma {
+.upperComma {
     grid-area: upperComma;
 }
 
-#enter {
+.enter {
     grid-area: enter;
 }
 
-#shiftL {
+.shiftL {
     grid-area: shiftL;
 }
 
-#leftSlash {
+.leftSlash {
     grid-area: leftSlash;
 }
 
-#z {
+.z {
     grid-area: z;
 }
 
-#x {
+.x {
     grid-area: x;
 }
 
-#c {
+.c {
     grid-area: c;
 }
 
-#v {
+.v {
     grid-area: v;
 }
 
 
-#b {
+.b {
     grid-area: b;
 }
 
-#n {
+.n {
     grid-area: n;
 }
 
-#m {
+.m {
     grid-area: m;
 }
 
-#dash {
+.dash {
     grid-area: dash;
 }
 
-#comma {
+.comma {
     grid-area: comma;
 }
 
-#rightSlash {
+.rightSlash {
     grid-area: rightSlash;
 }
 
-#keyUp {
+.keyUp {
     grid-area: keyUp;
 }
 
-#shiftR {
+.shiftR {
     grid-area: shiftR;
 }
 
-#ctrlL {
+.ctrlL {
     grid-area: ctrlL;
 }
 
-#win {
+.win {
     grid-area: win;
 }
 
-#altL {
+.altL {
     grid-area: altL;
 }
 
-#space {
+.space {
     grid-area: space;
 }
 
-#altR {
+.altR {
     grid-area: altR;
 }
 
-#ctrlR {
+.ctrlR {
     grid-area: ctrlR;
 }
 
-#keyDown {
+.keyDown {
     grid-area: keyDown;
 }
 
-#keyleft {
+.keyleft {
     grid-area: keyleft;
 }
 
-#keyRight {
+.keyRight {
     grid-area: keyRight;
 }

@@ -2,27 +2,35 @@
     margin: 0;
     padding: 0;
 }
-/*Должно быть пятнадцать!!!!!*/
-.keyboard {
 
-    border: 2px solid black;
-
+.main-container {
     width: 700px;
-    height: 250px;
     margin: 0 auto;
-    margin-top: 40px;/*!!!!*/
+}
+
+.input-field {
+    width: 100%;
+    resize: none;
+}
+
+.keyboard {
+    margin-bottom: 20px; /*!!!!*/
+
+    border: 1px solid black;
+
+    width: 100%;
+    height: 250px;
     text-align: center;
 
     display: grid;
     grid-template-areas: 
     "tilt one two three four five six seven eight nine zero minus plus backspace backspace"
-    "tab q w e r t y u i o p brackL brackR slash del"
-    "capsLook capsLook a s d f g h j k l dashComma upperComma enter enter"
-    "shiftL shiftL leftSlash z x c v b n m dash comma rightSlash keyUp shiftR"
-    "ctrlL win altL space space space space space space space altR ctrlR keyleft keyDown keyRight"
+    "tab q w e r t y u i o p brackL brackR slash slash"
+    "del del capsLook a s d f g h j k l dashComma upperComma upperComma"
+    "enter enter shiftL leftSlash z x c v b n m dash comma rightSlash ."
+    "keyUp shiftR ctrlL win altL altL altL altL altL space altR ctrlR keyleft keyDown keyRight"
     ;
-
-    grid-template-columns: repeat(15, auto);
+    grid-template-columns: repeat(15, 50px);
     grid-template-rows: repeat(5, auto);
     gap: 10px;
 }
@@ -32,6 +40,10 @@
 
     padding: 5px;
     padding-top: 10px;
+}
+
+.keyboard__cell--active {
+    outline: 2px solid orange;
 }
 
 .keyboard__cell:hover {
