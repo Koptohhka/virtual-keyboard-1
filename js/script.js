@@ -1,30 +1,32 @@
 (() => {
-    //джс-объекты
-
     const KEYBOARD_METHODS = {
         'CapsLock': true,
         'Shift': true,
         'Control': true,
         'fn': true,
-        'Tab': function() {
+        'Tab': function () {
             textInput.value += '      ';
         },
-        'Backspace': true,
+        'Backspace': function () {
+            return textInput.value = textInput.value.slice(0, -1);
+        },
         'Alt': true,
         'OS': true,
-        'Enter': true
+        'Enter': function() {
+            return textInput.value = textInput.value + '\n'
+        }
     }
-
-    //джс-объекты
-
-    //код начинается здеся
 
     const textInput = document.getElementById('input');
     const keyBoardContainer = document.getElementById('keyboard-container');
 
     let upperCaseFlag = false;
     let langFlag = true;
+
     let currentLanguage = window.data.EN_KEYS;
+    localStorage['test'] = currentLanguage;
+    //console.log(localStorage['test']);
+    //let currentLanguage = localStorage.currentLang;
 
     function renderKeyboard(classes, data) {
         let cellsArray = [];
@@ -55,8 +57,10 @@
     function toChangeLang() {
         if (langFlag) {
             currentLanguage = window.data.RU_KEYS;
+            //localStorage.setItem('currentLang', window.data.RU_KEYS);
         } else {
             currentLanguage = window.data.EN_KEYS;
+            //localStorage.setItem('currentLang', window.data.EN_KEYS);
         }
         renderKeyboard(window.data.CELL_CLASS, currentLanguage[0]);
     }
@@ -103,39 +107,38 @@
     }
 
     document.addEventListener('mousedown', function (evt) {
-        if (evt.target.id === 'CapsLock') {
-            toChangeCase();
-            toChangeCaseFlag();
-        }
-
-        if (evt.target.id === 'Shift') {
-            toChangeCase();
-            toChangeCaseFlag();
-
-            function shiftClickFunction() {
+        if (evt.target.classList.contains("keyboard__cell")) {
+            if (evt.target.id === 'CapsLock') {
                 toChangeCase();
                 toChangeCaseFlag();
-                document.removeEventListener('mouseup', shiftClickFunction);
             }
 
-            document.addEventListener('mouseup', shiftClickFunction);
+            if (evt.target.id === 'Shift') {
+                toChangeCase();
+                toChangeCaseFlag();
+
+                function shiftClickFunction() {
+                    toChangeCase();
+                    toChangeCaseFlag();
+                    document.removeEventListener('mouseup', shiftClickFunction);
+                }
+
+                document.addEventListener('mouseup', shiftClickFunction);
+            }
+
+            if (evt.target.id === 'Context') {
+                toChangeLang();
+                toChangeLangFlag();
+            }
+
+            toAddBorder(evt.target.id);
+
+            if (KEYBOARD_METHODS[evt.target.id] === undefined) {
+                toAddletter(evt.target);
+            } else if (typeof KEYBOARD_METHODS[evt.target.id] === 'function') {
+                KEYBOARD_METHODS[evt.target.id]();
+            }
         }
-
-        if (evt.target.id === 'Context') {
-            toChangeLang();
-            toChangeLangFlag();
-        }
-
-        //if (evt.target.classList.contains()) {   //попытайся фиксануть таргет налл(да, я пишу себе комментарии, и что?)
-        toAddBorder(evt.target.id);
-        //}
-
-        if (KEYBOARD_METHODS[evt.target.id] === undefined) {
-            toAddletter(evt.target);
-        } else if (typeof KEYBOARD_METHODS[evt.target.id] === 'function') {
-            KEYBOARD_METHODS[evt.target.id]();
-        }
-
     });
 
     document.addEventListener('keydown', function (evt) {
@@ -170,31 +173,13 @@
             toAddBorder(evt.key);
         }
         let targetElement = document.getElementById(evt.key);
-
+        console.log(targetElement);
         if (KEYBOARD_METHODS[targetElement.textContent] === undefined) {
             console.log(true);
             toAddletter(targetElement)
+        } else {
+            KEYBOARD_METHODS[targetElement.textContent]();
+            console.log(1);
         }
     });
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //console.log(window.data.KEYS[2].length);
-
-
-    /*document.addEventListener('click', function(evt) {
-        if (evt.target.classList.contains('keyboard__cell')) {
-            evt.target.classList.add('keyboard__cell--active');
-        }
-    });*/
 })()
