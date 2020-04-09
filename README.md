@@ -5,3 +5,6 @@
 ***
 
 Клавиши ctrl+alt, context это смена языка
+***
+
+ссылка на работу https://koptohhka.github.io/virtual-keyboard/
